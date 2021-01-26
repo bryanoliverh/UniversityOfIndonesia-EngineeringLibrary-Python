@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FTUI Library - Student</title>
+<style media="screen">
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+
+.jumbotron{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.jumbotron h1{
+  text-align: center;
+}
+
+
+</style>
+  </head>
+  <body>
+    {% include "library/navbarstudent.html" %}
+    <br>
+    <br>
+    <center><h3 style=" margin-bottom: 0px;"class = "p-3 mb-2 bg-primary text-white">Welcome to FTUI Library</h3></center>
+    <div class="jumbotron"   style="    margin-bottom: 0px;">
+    <h1 class="display-4">Hello {{user.first_name}} {{user.last_name}} !</h1>
+    <p class="lead">As student, please take a good look at the terms and rules applied,
+      students can borrow books freely, but please pay attention to the issued date.
+    </p>
+    <hr class="my-4">
+    <p>View your issued books and other books!</p>
+    <div class="options" style="text-align:center">
+      <a href="viewbookbystudent" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">All Books</a><br><br>
+      <a href="viewauthorbystudent" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Book Author</a><br><br>
+      <a href="viewissuedbookbystudent" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Your Borrowed Book</a><br><br>
+        </div>
+
+    </div>
+
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

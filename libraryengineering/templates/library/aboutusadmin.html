@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>FTUI Library Contacts</title>
+    <style media="screen">
+    .jumbotron{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .jumbotron h1{
+      text-align: center;
+    }
+    .alert{
+      margin: 0px;
+    }
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+
+    {% include "library/navbaradmin.html" %}
+<br><br>
+<center><h3 class = "p-4 bg-white text-primary">About Us !</h3></center>
+    <div class="jumbotron">
+  <h1 class="display-4">Hello, {{user.first_name}} !</h1>
+  <p class="lead">As student, you can read/borrow books freely, by contacting the administrator. 
+            We suggest you to keep attention on the issue date and expiry date. There will be fine if you are late in returning
+            the books. You can renew or extend the duration by contacting the administrator.
+  </p>
+  <hr class="my-4">
+  <p>Explore our Website.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+  </p>
+  
+<h2>Please Don't Hesitate to Contact</h2>
+<p>Bryan Oliver</p>
+<p>Contact Freely: bryan.oliver@ui.ac.id</p>
+
+<div>
+{% load static %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{% static "images/ui.png" %}" style="vertical-align:middle;margin:0px 50px"width = "20%"   height="20%;"alt="" />
+</div>  
+</div>
+
+
+
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

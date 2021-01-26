@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FTUI Library - View Author</title>
+<style media="screen">
+    table.TableColor {
+border: 2px solid #2800bb;
+background-color: #97e1ff;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.TableColor td, table.TableColor th {
+border: 1px solid #000000;
+padding: 3px 2px;
+}
+table.TableColor tbody td {
+font-size: 13px;
+}
+table.TableColor tr:nth-child(even) {
+background: #a6bbff;
+}
+table.TableColor thead {
+background: #2800bb;
+}
+table.TableColor thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #2800bb;
+}
+table.TableColor thead th:first-child {
+border-left: none;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #f5f5f5;
+}
+table.TableColor tfoot td {
+font-size: 13px;
+}
+table.TableColor tfoot .links {
+text-align: right;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #2800bb;
+}
+</style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br>
+    <br>
+    <h3 class="p-4 bg-white text-primary" style = 'font-size: 50px;text-align:center;'>Available Author</h3>
+{% if authors%}
+<table class="TableColor">
+<thead>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Date of Birth</th>
+<th>Date of Death</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="4" rowspan="4">
+<div class="links"></div>
+</td>
+</tr>
+</tfoot>
+<tbody>
+  {% for author in authors %}
+    <tr>
+      <td>{{author.first_name}}</td>
+      <td>{{author.last_name}}</td>
+      <td>{{author.date_of_birth}}</td>
+      <td>{{author.date_of_death}}</td>
+    </tr>
+  {% endfor %}
+</tbody>
+</table>
+{%else%}
+<h1>Have no author</h1>
+{%endif%}
+<br><br><br>
+<h2 style= "text-align:center" class="display-8"> Total Authors in library FTUI</h2>
+    <li style= "text-align:center"><strong>Total Authors:</strong> {{ num_authors }}</li>
+    <li style= "text-align:center"><strong>Authors that contain a in the first name:</strong> {{ num_authorsa }}</li>
+    <li style= "text-align:center"><strong>Authors with first name starts with a:</strong> {{ num_authorsstarta }}</li>
+    <li style= "text-align:center"><strong>Authors with first name ends with n:</strong> {{ num_authorendwithn }}</li>
+    <li style= "text-align:center"><strong>Authors with last name starts with a:</strong> {{ num_authorsstartj }}</li>
+    <li style= "text-align:center"><strong>Authors with last name ends with g:</strong> {{ num_authorsendsg }}</li>
+    <li style= "text-align:center"><strong>Author with name Raditya Dika:</strong> {{ num_authorsand }}</li>
+    <li style= "text-align:center"><strong>Authors with first name and last name contains English:</strong> {{ num_authorseng }}</li>
+    <li style= "text-align:center"><strong>Author with name Raditya Dika:</strong> {{ num_authorsand }}</li>
+
+  <h3 class="p-4 bg-white text-primary" style ='text-align:center;'>You have visited this page {{ num_visits }} time{% if num_visits > 1 %}s{% endif %} since logged in.
+</h3>
+<br>    
+<br>    <br>    <br>    
+    {% include "library/footer.html" %}
+  </body>
+</html>

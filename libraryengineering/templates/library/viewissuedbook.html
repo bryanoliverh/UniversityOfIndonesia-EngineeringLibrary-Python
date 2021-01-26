@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FTUI Library - View Issued Book</title>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+       table.TableColor {
+border: 2px solid #2800bb;
+background-color: #97e1ff;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.TableColor td, table.TableColor th {
+border: 1px solid #000000;
+padding: 3px 2px;
+}
+table.TableColor tbody td {
+font-size: 13px;
+}
+table.TableColor tr:nth-child(even) {
+background: #a6bbff;
+}
+table.TableColor thead {
+background: #2800bb;
+}
+table.TableColor thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #2800bb;
+}
+table.TableColor thead th:first-child {
+border-left: none;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #f5f5f5;
+}
+table.TableColor tfoot td {
+font-size: 13px;
+}
+table.TableColor tfoot .links {
+text-align: right;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #2800bb;
+
+}
+    </style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br>
+    <br>
+    <h3 class="p-4 bg-white text-primary" style = 'font-size: 50px;text-align:center;margin-bottom:0px;'>Books Issued for Student !</h3>
+
+{% if li%}
+    <table class="TableColor">
+    <thead>
+    <tr>
+    <th>Student Name</th>
+    <th>Student Enrollment</th>
+    <th>Book Name</th>
+    <th>Book Author</th>
+    <th>Issue Date</th>
+    <th>Expiry Date</th>
+    <th>Fine (Rp)</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+    <td colspan="7">
+    <div class="links"></div>
+    </td>
+    </tr>
+    </tfoot>
+    <tbody>
+      {% for t in li %}
+        <tr>
+          <td>{{t.0}}</td>
+          <td>{{t.1}}</td>
+          <td>{{t.2}}</td>
+          <td>{{t.3}}</td>
+          <td>{{t.4}}</td>
+          <td>{{t.5}}</td>
+          <td>{{t.6}}</td>
+        </tr>
+        {%endfor%}
+    </tbody>
+    </table>
+    {%else%}
+    <h1> 0 book Issued</h1>
+    {%endif%}
+    <br><br><br>
+    <h2 style= "text-align:center" class="display-8">Total Issued Book</h2>
+
+  <li style= "text-align:center"><strong>Issued Books:</strong> {{ num_books}}</li>
+  <br><br>
+
+  <h3 class="p-4 bg-white text-primary" style ='text-align:center;'>You have visited this page {{ num_visits }} time{% if num_visits > 1 %}s{% endif %} since logged in.
+</h3>
+
+    <br>    <br>    <br>   
+
+  {% include "library/footer.html" %}
+  </body>
+</html>

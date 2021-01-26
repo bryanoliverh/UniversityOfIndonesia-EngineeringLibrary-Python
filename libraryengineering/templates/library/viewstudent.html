@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FTUI Library - View Students</title>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+        table.TableColor {
+border: 2px solid #2800bb;
+background-color: #97e1ff;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.TableColor td, table.TableColor th {
+border: 1px solid #000000;
+padding: 3px 2px;
+}
+table.TableColor tbody td {
+font-size: 13px;
+}
+table.TableColor tr:nth-child(even) {
+background: #a6bbff;
+}
+table.TableColor thead {
+background: #2800bb;
+}
+table.TableColor thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #2800bb;
+}
+table.TableColor thead th:first-child {
+border-left: none;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #f5f5f5;
+}
+table.TableColor tfoot td {
+font-size: 13px;
+}
+table.TableColor tfoot .links {
+text-align: right;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #2800bb;
+}
+    </style>
+  </head>
+  <body>
+    {% include "library/navbaradmin.html" %}
+    <br>
+    <br>
+    <h3 class="p-4 bg-white text-primary" style = 'font-size: 50px;text-align:center;'>Student registered in Library !</h3>
+
+    {% if students%}
+<table class="TableColor">
+<thead>
+<tr>
+<th>Name</th>
+<th>Enrollment</th>
+<th>Department</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="3">
+<div class="links"></div>
+</td>
+</tr>
+</tfoot>
+<tbody>
+  {% for s in students %}
+    <tr>
+      <td>{{s.get_name}}</td>
+      <td>{{s.enrollment}}</td>
+      <td>{{s.branch}}</td>
+
+    </tr>
+
+  {% endfor %}
+  
+</tbody>
+</table>
+{%else%}
+<h1> No Student Registered in Library</h1>
+{%endif%}
+<br><br>
+
+<h2 style= "text-align:center" class="display-8"> Total Students Registered in library FTUI</h2>
+    <li style= "text-align:center"><strong>Students from Batch 2017:</strong> {{ studentselect17}}</li>
+    <li style= "text-align:center"><strong>Students from Batch 2018:</strong> {{ studentselect18}}</li>
+    <li style= "text-align:center"><strong>Students from Batch 2019:</strong> {{ studentselect19}}</li>
+    <li style= "text-align:center"><strong>Students from Batch 2020:</strong> {{ studentselect20}}</li>
+    <li style= "text-align:center"><strong>Laboratory / Instance:</strong> {{ studentselectoth}}</li>
+  <h3 class="p-4 bg-white text-primary" style ='text-align:center;'>You have visited this page {{ num_visits }} time since logged in{% if num_visits > 1 %}s{% endif %}.
+</h3>
+<br>    
+  {% include "library/footer.html" %}
+  </body>
+</html>

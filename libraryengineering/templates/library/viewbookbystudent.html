@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>FTUI Library - View Book</title>
+<style media="screen">
+    
+table.TableColor {
+border: 0.5px solid #60f4ff;
+background-color: rgb(255, 255, 255);
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table.TableColor td, table.TableColor th {
+border: 1px solid #000000;
+padding: 3px 2px;
+}
+table.TableColor tbody td {
+font-size: 13px;
+}
+table.TableColor tr:nth-child(even) {
+background: #bbeaff;
+}
+table.TableColor thead {
+background: #2600ff;
+}
+table.TableColor thead th {
+font-size: 19px;
+font-weight: bold;
+color: #FFFFFF;
+text-align: center;
+border-left: 2px solid #2600ff;
+}
+table.TableColor thead th:first-child {
+border-left: none;
+}
+
+table.TableColor tfoot {
+font-size: 13px;
+font-weight: bold;
+color: #FFFFFF;
+background: #2600ff;
+}
+table.TableColor tfoot td {
+font-size: 13px;
+}
+table.TableColor tfoot .links {
+text-align: right;
+}
+table.TableColor tfoot .links a{
+display: inline-block;
+background: #FFFFFF;
+color: #2600ff;
+padding: 2px 8px;
+border-radius: 5px;
+}
+</style>
+  </head>
+  <body>
+    {% include "library/navbarstudent.html" %}
+    <br>
+    <br>
+    <h3 class="p-3 mb-2 bg-primary text-white" style = 'font-size: 30px;text-align:center;'>Available Book in FTUI Library !</h3>
+{% if books%}
+<table class="TableColor">
+<thead>
+<tr>
+<th>Book Name</th>
+<th>ISBN</th>
+<th>Author</th>
+<th>Category</th>
+<th>Language</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td colspan="5" rowspan="5">
+<div class="links"></div>
+</td>
+</tr>
+</tfoot>
+<tbody>
+  {% for book in books %}
+    <tr>
+      <td>{{book.name}}</td>
+      <td>{{book.isbn}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.category}}</td>
+      <td>{{book.language}}</td>
+    </tr>
+  {% endfor %}
+</tbody>
+</table>
+{%else%}
+<h1>Have 0 book</h1>
+{%endif%}
+<br><br><br>
+<h2 style= "text-align:center" class="display-8"> Total books in library FTUI</h2>
+    <li style= "text-align:center"><strong>Books:</strong> {{ num_books}}</li>
+    <li style= "text-align:center"><strong>Authors:</strong> {{ num_authors }}</li>
+    <li style= "text-align:center"><strong>Educational Books:</strong> {{ num_edubooks }}</li>
+    <li style= "text-align:center"><strong>Biography Books:</strong> {{ num_biobooks }}</li>
+    <li style= "text-align:center"><strong>Entertainment Books:</strong> {{ num_entbooks }}</li>
+
+    
+<h2 style= "text-align:center" class="display-8"> Total book languages in library FTUI</h2>
+<li style= "text-align:center"><strong>Book Language:</strong> {{ tot_lang}}</li>
+<li style= "text-align:center"><strong>English Language Books:</strong> {{ tot_langeng}}</li>
+<li style= "text-align:center"><strong>Japanese Language Books:</strong> {{ tot_langjap}}</li>
+<li style= "text-align:center"><strong>Germany Language Books:</strong> {{ tot_langger}}</li>
+<li style= "text-align:center"><strong>Indonesian Language Books:</strong> {{ tot_langind}}</li>
+<li style= "text-align:center"><strong>Arabic Language Books:</strong> {{ tot_langarab}}</li>
+<li style= "text-align:center"><strong>Javanese Language Books:</strong> {{ tot_langjav}}</li>
+
+  <h3 class="p-4 bg-white text-primary" style ='text-align:center;'>You have visited this page {{ num_visits }} time{% if num_visits > 1 %}s{% endif %} since logged in.
+</h3>
+<br>    
+<br>    <br>    <br> 
+
+    {% include "library/footer.html" %}
+  </body>
+</html>

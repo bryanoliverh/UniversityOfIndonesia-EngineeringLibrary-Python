@@ -82,7 +82,7 @@ DATABASES = {
          'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ftuilibdb',
         'USER':'postgres',
-        'PASSWORD':'chuzzle123',
+        'PASSWORD':'databaseroot',
         'HOST':'localhost'
 
     }

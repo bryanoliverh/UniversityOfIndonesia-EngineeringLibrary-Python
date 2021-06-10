@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="D:\aslab jaringan\proyeksbd\libraryengineering\env"
+$env:VIRTUAL_ENV="D:\aslab jaringan\daftar\proyeksbd\libraryengineering\env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

@@ -1,4 +1,4 @@
-# libraryengineering
+# Engineering Library Website
 
 Python Django project that creates a website for library management. The project uses Python (Django framework), CSS, HTML, JavaScript, and PostgreSQL as the Database. The website enables:
 
